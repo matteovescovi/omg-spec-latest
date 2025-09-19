@@ -38,6 +38,47 @@ Grab the latest Windows installer and install it.
 Don't forget to add Pandoc to your PATH.
 
 
+# FrameMaker to MarkDown conversion
+
+The CORBA specification source format has been FrameMaker since its inception.
+
+## Tools Used in the content conversion
+
+Writage: Microsoft Word plugin that copies formatted text and outputs into MarkDown.
+
+The conversion process required pretty extensive manual cleanup and formatting work.
+
+The bulk of this work was done manually to ensure that the source document and the newly outputted MarkDown PDF document were similar.
+
+
+## Validation of migrated content
+
+The writing team that worked on this project validated the documents and the text against the previous editions.
+
+This validation included the following:
+- Formatting of the PDF files
+- Validation of PDF files
+- Text validation using the tool Beyond Compare
+
+Extracted all text from the Original and Markdown generated PDF and ran a text diff.
+- Spot checks when necessary
+
+
+## Conversion of images and diagrams to scalable vector graphics
+
+Images were initially extracted from the PDFs in PNG/JPG format by taking a snip (snapshot) of the rendered PDFs.
+
+The Object Management Group (OMG) and other standardization bodies that consume the CORBA specification (such as the International Organization for Standardization (ISO) require the graphics to be in scalable vector format in the specification sources and targets.
+
+They cannot be raster graphics (PNG, JPG) because no matter the resolution of the graphics, they’ll look grainy when you zoom in close enough. On the contrary, vector graphics can be scaled up as much as one wants, with no degradation, since they contain drawing instructions rather than RGB values for each of the pixels in the image.
+
+To convert the graphic diagrams in the CORBA 3.4 spec to SVG, the following steps were manually carried out for each diagram:
+- open the original CORBA 3.4 PDF document in the open-source vector graphics editing tool Inkscape
+- select and copy (after ungrouping as necessary) the elements constituting the diagram from the rest of the document
+- paste the diagram elements into a new SVG file
+- editing the MarkDown sources to refer to the newly created SVG file rather than the previous PNG/JPG file
+
+
 
 ## tl;dr
  -- _*DO NOT CLONE THIS REPOSITORY*_ --
