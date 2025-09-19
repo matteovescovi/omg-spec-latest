@@ -33,6 +33,11 @@ pacman -S \
   make
 ```
 
+The MarkDown to LaTeX conversion step requires Pandoc: https://pandoc.org/
+Grab the latest Windows installer and install it.
+Don't forget to add Pandoc to your PATH.
+
+
 
 ## tl;dr
  -- _*DO NOT CLONE THIS REPOSITORY*_ --
