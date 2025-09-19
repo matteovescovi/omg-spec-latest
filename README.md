@@ -1,6 +1,39 @@
 # OMG MDSA - SPECIFICATION
 The OMG's Model Driven Specification Authoring process is a new technique for creating OMG specifications. There are three main parts: Document creation, collaboration, and model generated content. The latter two are optional, but strongly suggested.
 
+## CORBA specification authoring environment on Windows
+
+The LaTeX authoring environment currently used to build the CORBA specification
+on a Windows platform is based on MSYS2: https://www.msys2.org/
+
+After installing the base MSYS2 environment packages, install the following TeXLive packages:
+```
+pacman -S \
+  mingw-w64-ucrt-x86_64-texlive-bibtex-extra \
+  mingw-w64-ucrt-x86_64-texlive-bin \
+  mingw-w64-ucrt-x86_64-texlive-core \
+  mingw-w64-ucrt-x86_64-texlive-font-utils \
+  mingw-w64-ucrt-x86_64-texlive-fonts-recommended \
+  mingw-w64-ucrt-x86_64-texlive-latex-extra \
+  mingw-w64-ucrt-x86_64-texlive-latex-recommended \
+  mingw-w64-ucrt-x86_64-texlive-pictures \
+  mingw-w64-ucrt-x86_64-texlive-plain-generic
+```
+
+In order to import SVG images in the LaTeX, you will need inkscape:
+```
+pacman -S \
+  mingw-w64-ucrt-x86_64-inkscape
+```
+
+The OMG LaTeX production tool requires PIP and make:
+```
+pacman -S \
+  mingw-w64-ucrt-x86_64-python-pip \
+  make
+```
+
+
 ## tl;dr
  -- _*DO NOT CLONE THIS REPOSITORY*_ --
 
